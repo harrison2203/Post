@@ -2,7 +2,6 @@
 import { ref } from 'vue';
 import testComp from '../components/testComp.vue';
 
-
 const Createemail = ref('');
 const Createpassword = ref('');
 
@@ -28,6 +27,3 @@ function handleRegistration() {
 	<testComp :essaie="Createemail"/>
   </div>
 </template>
-
-<style scoped>
-</style>
