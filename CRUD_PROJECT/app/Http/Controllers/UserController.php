@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function inscription (Request $request){
-        return $request->all();
-    }
+	public function inscription (Request $request){
+		return $request->all();
+	}
 }
