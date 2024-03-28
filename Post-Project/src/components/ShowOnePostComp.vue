@@ -10,51 +10,44 @@ const toaster = createToaster({});
 const showpost = ref([])
 let route = useRoute()
 
-
 axios.get ('http://127.0.0.1:8000/api/posts/' + route.params.id)
 	.then (function (response) {
 	toaster.success ('Post chargé avec succès')
 	showpost.value = response.data
 	})
-
 </script>
 
-
 <template>
-
-<div class="containerMajor">
-	<!-- <div class="titleOnePost">Mon Post It</div> -->
-</div>
-
-<div class="container">
-	<div class="postOneElement">
-		<div class="elementId" v-for="element in showpost">
-			<h2>{{ element.id}}</h2>
-			<h2>{{ element.title }}</h2>
-			<p>{{ element.content }}</p>
+	<div class="containerMajor">
+		<!-- <div class="titleOnePost">Mon Post It</div> -->
+	</div>
+	<div class="container">
+		<div class="postOneElement">
+			<div class="elementId" v-for="element in showpost">
+				<h2>{{ element.id}}</h2>
+				<h2>{{ element.title }}</h2>
+				<p>{{ element.content }}</p>
+			</div>
 		</div>
 	</div>
-</div>
-
 </template>
 
 <style scoped>
-
-.containerMajor{
+.containerMajor {
 height: 130px;
 display: flex;
 align-items: center;
 justify-content: center;
 }
 
-.container{
+.container {
 gap: 30px;
 margin-top: 30px;
 display:flex;
 justify-content:center;
 }
 
-.postOneElement{
+.postOneElement {
 width: 50%;
 background: #cbecda;
 padding: 3em;

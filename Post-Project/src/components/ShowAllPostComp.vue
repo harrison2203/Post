@@ -1,9 +1,7 @@
 <script setup>
-// composant qui affiche les tous  posts
 import axios from 'axios'
 import { ref } from 'vue'
 import { createToaster } from "@meforma/vue-toaster";
-
 
 const toaster = createToaster()
 let posts = ref()
@@ -11,36 +9,33 @@ let posts = ref()
 axios.get('http://127.0.0.1:8000/api/posts')
 	.then ((response) => {
     console.log (response)
-	toaster.success(' affiché avec succès'),
+	toaster.success(' affiché avec succès');
 	console.log (response);
-	posts.value = response.data 
-})
-	.catch ((error) =>{
-		toaster.error("Cela n'a pas pu être affiché")
-		console.log (error)
+	posts.value = response.data;
+	console.log(posts);
 	})
-console.log(posts)
+	.catch ((error) =>{
+		toaster.error("Cela n'a pas pu être affiché");
+		console.log (error);
+	})
 </script>
 
-
 <template>
-
   <div class="container">
-      <div v-for="element in posts" class="major">
-
-        <RouterLink :to="{name:'onePost', params: {id: element.id}}" class="postsLinks">
-          <div class="elementTitleContent">
-          <h2>{{ element.title}}</h2>
-          <p>{{ element.content }}</p>
-          <!-- <a :href="'/posts/'+posts._id">cliquez ici</a> -->
-          </div>
-          </RouterLink>
-      </div>
+		<div v-for="element in posts" class="major">
+			<RouterLink :to="{name:'onePost', params: {id: element.id}}" class="postsLinks">
+				<div class="elementTitleContent">
+					<h2>{{ element.title}}</h2>
+					<p>{{ element.content }}</p>
+					<!-- <a :href="'/posts/'+posts._id">cliquez ici</a> -->
+				</div>
+			</RouterLink>
+		</div>
   </div>
 </template>
 
 <style scoped>
-.container{
+.container {
   display:flex;
   flex-direction: column;
 	gap: 30px;
@@ -49,7 +44,7 @@ console.log(posts)
   margin-right:70px;
 }
 
-.elementTitleContent{
+.elementTitleContent {
 width: 70%;
 background: #cbecda;
 padding: 3em;

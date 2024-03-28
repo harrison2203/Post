@@ -9,35 +9,34 @@ import { RouterView } from 'vue-router';
 <header>
   <HeaderComp/>
 </header>
-<body class="principal">
-    <div class="row">
-        <div class="col">
-          <div class="leftSide"><ShowAllPostComp/></div>
-        </div>
-        <div class="col">
-					<div class="rightSide"><CreatePostComp  />
-					</div>
-        </div>
-    </div>
-<RouterView/>
-</body>
+	<body class="principal">
+		<div class="row">
+			<div class="col">
+				<div class="leftSide"><ShowAllPostComp/></div>
+			</div>
+			<div class="col">
+				<div class="rightSide"><CreatePostComp  /></div>
+			</div>
+		</div>
+	<RouterView/>
+	</body>
 </template>
 
 <style scoped>	
-.principal{
+.principal {
   display:flex;
   justify-content: space-around;
 }
 
-.row{
+.row {
   display:flex;
   align-items: baseline;
 }
 
-.rightSide{
+.rightSide {
   margin-right:0px;
 }
-.leftSide{
+.leftSide {
 margin-right:0px;
 }
 </style>

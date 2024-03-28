@@ -5,22 +5,21 @@ import HeaderComp from '../components/HeaderComp.vue';
 </script>
 
 <template>
-<header>
-  		<HeaderComp/>
-</header>
-
-<body class="bodyOnePost">
-	<div class="rowOne">
-		<div class="bigContainer">
-			<div>
-				<div class="ShowOnePost"><ShowOnePostComp/></div>
-			</div>
-			<div>>
-				<div class="DeletePostComp"><DeletePostComp/></div>
+	<header>
+		<HeaderComp/>
+	</header>
+	<body class="bodyOnePost">
+		<div class="rowOne">
+			<div class="bigContainer">
+				<div>
+					<div class="ShowOnePost"><ShowOnePostComp/></div>
+				</div>
+				<div>>
+					<div class="DeletePostComp"><DeletePostComp/></div>
+				</div>
 			</div>
 		</div>
-	</div>
-</body>
+	</body>
 </template>
 
 <style scoped>
